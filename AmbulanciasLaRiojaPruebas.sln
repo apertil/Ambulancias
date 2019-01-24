@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmbulanciasLaRiojaPruebas", "AmbulanciasLaRiojaPruebas\AmbulanciasLaRiojaPruebas.csproj", "{C57A02F0-B857-41EA-998C-B15617A8AE3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerrovialSettings", "FerrovialSettings\FerrovialSettings.csproj", "{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C57A02F0-B857-41EA-998C-B15617A8AE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57A02F0-B857-41EA-998C-B15617A8AE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57A02F0-B857-41EA-998C-B15617A8AE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57A02F0-B857-41EA-998C-B15617A8AE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D3A89AB-5E88-4AC2-BDA8-6A34FF85E06B}
+	EndGlobalSection
+EndGlobal
