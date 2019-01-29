@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AmbulanciasLaRiojaPruebas</name>
+    </assembly>
+    <members>
+        <member name="T:AmbulanciasLaRiojaPruebas.Controllers.SenecaController">
+            <summary>
+            seneca Controller
+            </summary>
+        </member>
+        <member name="F:AmbulanciasLaRiojaPruebas.Controllers.SenecaController._ServiceSettings">
+            <summary>
+            Privadas cargadas con constructor inicialización _ServiceSettings
+            </summary>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.#ctor(Microsoft.Extensions.Options.IOptions{FerrovialSettings.SenecaServiceSettings},System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Constructor con inicialización _ServiceSettings, _httpClientFactory
+            </summary>
+            <param name="sServiceSettings"></param>
+            <param name="shttpClientFactory"></param>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_last_servicesNoJWT(System.String,System.String,System.DateTime)">
+            <summary>
+            Returns a Service JSON collection.
+             No JWT authorization
+            </summary>
+            <param name="ou">Localización. Formato de cadena</param>
+            <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
+            <param name="start_date">Local start date in ISO 8601 format (ex: 2019-01-16T10:15:00)</param>
+            <returns></returns>
+            <returns>A Location JSON collection</returns>
+            <response code="200">Locations found</response>
+            <response code="204">No results found</response>
+            <response code="400">Bad request</response>
+            <response code="500">Server error</response>
+            <response code="503">Service unavailable</response>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_last_locations(System.String,System.String,System.DateTime)">
+            <summary>
+            Devuelve en formato JSON los datos de las últimas localizaciones de los vehículos.
+            </summary>
+            <param name="ou">Localización. Formato de cadena</param>
+            <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
+            <param name="ou_start_date">Local start date in ISO 8601 format (ex: 2019-01-16T10:15:00)</param>
+            <returns></returns>
+            /// <returns> Devuelve en formato JSON los datos de las últimas localizaciones de los vehículos.</returns>
+            <response code="200">Locations found</response>
+            <response code="204">No results found</response>
+            <response code="400">Bad request</response>
+            <response code="500">Server error</response>
+            <response code="503">Service unavailable</response>
+        </member>
+        <member name="T:AmbulanciasLaRiojaPruebas.Controllers.ValuesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:AmbulanciasLaRiojaPruebas.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AmbulanciasLaRiojaPruebas.Startup">
+            <summary>
+            MUY IMPORTANTE PARA PUBLICAR CON SWAGGER
+            Hay que habilitar tanto en RELEASE como en DEBUG:
+            Propiedades / Compilación / Salida / Archivo de documentación XML
+            </summary>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:AmbulanciasLaRiojaPruebas.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AmbulanciasLaRiojaPruebas.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmbulanciasLaRiojaPruebas", "AmbulanciasLaRiojaPruebas\AmbulanciasLaRiojaPruebas.csproj", "{C57A02F0-B857-41EA-998C-B15617A8AE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmbulanciasLaRiojaPruebas", "AmbulanciasLaRiojaPruebas\AmbulanciasLaRiojaPruebas.csproj", "{C57A02F0-B857-41EA-998C-B15617A8AE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerrovialSettings", "FerrovialSettings\FerrovialSettings.csproj", "{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerrovialSettings", "FerrovialSettings\FerrovialSettings.csproj", "{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerroFTS", "FerroFTS\FerroFTS.csproj", "{4E91453D-741E-4590-963B-2E1CBDA3CBE3}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FerroData", "FerroData\FerroData.vbproj", "{577E8CCC-06F3-4A36-B617-7D11AF0DBFC2}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FerroGeoJSON", "FerroGeoJSON\FerroGeoJSON.vbproj", "{BA4A9C09-EEE1-4441-874C-14276BB03638}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerroLogs", "FerroLogs\FerroLogs.csproj", "{8F89EC4D-A034-43BC-852E-83B94E1DBE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8186107-A041-4EC4-ACFA-A5CF06F5E42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E91453D-741E-4590-963B-2E1CBDA3CBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E91453D-741E-4590-963B-2E1CBDA3CBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E91453D-741E-4590-963B-2E1CBDA3CBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E91453D-741E-4590-963B-2E1CBDA3CBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577E8CCC-06F3-4A36-B617-7D11AF0DBFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577E8CCC-06F3-4A36-B617-7D11AF0DBFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577E8CCC-06F3-4A36-B617-7D11AF0DBFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577E8CCC-06F3-4A36-B617-7D11AF0DBFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4A9C09-EEE1-4441-874C-14276BB03638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4A9C09-EEE1-4441-874C-14276BB03638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4A9C09-EEE1-4441-874C-14276BB03638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4A9C09-EEE1-4441-874C-14276BB03638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F89EC4D-A034-43BC-852E-83B94E1DBE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F89EC4D-A034-43BC-852E-83B94E1DBE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F89EC4D-A034-43BC-852E-83B94E1DBE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F89EC4D-A034-43BC-852E-83B94E1DBE00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

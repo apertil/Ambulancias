@@ -1,0 +1,13 @@
+﻿
+.swagger-ui .topbar {
+    background-color: gold;
+    visibility: hidden;
+}
+
+    .swagger-ui .topbar .wrapper .topbar-wrapper .download-url-wrapper {
+        visibility: hidden;
+    }
+
+    .swagger-ui .topbar .wrapper .topbar-wrapper .link {
+        visibility: hidden;
+    }

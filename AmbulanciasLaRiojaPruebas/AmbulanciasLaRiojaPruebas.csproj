@@ -1,8 +1,37 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>AmbulanciasLaRiojaPruebas.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>AmbulanciasLaRiojaPruebas.xml</DocumentationFile>
+  </PropertyGroup>
+  
+   <ItemGroup>
+    <Compile Remove="SenecaServiceSettings\**" />
+    <Content Remove="SenecaServiceSettings\**" />
+    <EmbeddedResource Remove="SenecaServiceSettings\**" />
+    <None Remove="SenecaServiceSettings\**" />
+  </ItemGroup>
+  
+  <!--<ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <None Remove="AmbulanciasLaRiojaPruebas.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AmbulanciasLaRiojaPruebas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
@@ -11,11 +40,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="4.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FerroData\FerroData.vbproj" />
+    <ProjectReference Include="..\FerroFTS\FerroFTS.csproj" />
+    <ProjectReference Include="..\FerroGeoJSON\FerroGeoJSON.vbproj" />
+    <ProjectReference Include="..\FerroLogs\FerroLogs.csproj" />
     <ProjectReference Include="..\FerrovialSettings\FerrovialSettings.csproj" />
   </ItemGroup>
 
