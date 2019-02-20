@@ -66,6 +66,40 @@ namespace FerroFTS
             }
         }
 
+        public List<FerroFTS.Data.service> GetVehicleServices(string sOu, string sOuService, DateTime sStartDate, DateTime sEndDate)
+        {
+            MongoDB.Driver.FilterDefinition<FerroFTS.Data.service> oFilter;
+            FerroData.Mongo.DataMongo<FerroFTS.Data.service> oData = new FerroData.Mongo.DataMongo<FerroFTS.Data.service>();
+            MongoDB.Driver.FindOptions<FerroFTS.Data.service> oOptions = new MongoDB.Driver.FindOptions<FerroFTS.Data.service>();
+            List<FerroFTS.Data.service> oList = new List<Data.service>();
+
+            try
+            {
+                //*****************************************************************
+                //Convertimos fechas
+                //*****************************************************************
+                sStartDate = Data.Common.ParseUTC(sStartDate);
+                sEndDate = Data.Common.ParseUTC(sEndDate);
+
+                /*'*****************************************************************
+                *Agregamos datos al filtro 
+                ******************************************************************'*/
+                oFilter = new MongoDB.Bson.BsonDocument("ou", sOu);
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("ou_service", sOuService));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$gte", sStartDate)));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$gte", sStartDate)));
+
+                oData.Session = this._Session;
+                oList = oData.Find(oFilter, oOptions);
+                return oList;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception((ex.StackTrace.Substring((ex.StackTrace.LastIndexOf("\r\n") + 4)) + ("\r\n" + ex.Message)));
+            }
+            
+        }
 
 
 

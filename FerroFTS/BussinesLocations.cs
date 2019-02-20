@@ -42,8 +42,66 @@ namespace FerroFTS
 
         }
 
+        public List<FerroFTS.Data.last_location> GetLocationsDates(string sOu, string sOuService, string svehicle ,DateTime sStartDate, DateTime sEndDate)
+        {
+            MongoDB.Driver.FilterDefinition<FerroFTS.Data.last_location> oFilter;
+            FerroData.Mongo.DataMongo<FerroFTS.Data.last_location> oData = new FerroData.Mongo.DataMongo<FerroFTS.Data.last_location>();
+            MongoDB.Driver.FindOptions<FerroFTS.Data.last_location> oOptions = new MongoDB.Driver.FindOptions<FerroFTS.Data.last_location>();
+            List<FerroFTS.Data.last_location> oList;
+
+            try
+            {
+                oFilter = new MongoDB.Bson.BsonDocument("ou", sOu);
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("ou_service", sOuService));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("vehicle", svehicle));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$gte", sStartDate)));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$lte", sEndDate)));
+                oData.Session = this._Session;
+                oList = oData.Find(oFilter, oOptions);
+                return oList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception((ex.StackTrace.Substring((ex.StackTrace.LastIndexOf("\r\n") + 4)) + ("\r\n" + ex.Message)));
+            }
+        }
+
+        public List<FerroFTS.Data.last_location> GetVehicleRoute(string sOu, string sidVehicle, string svehicle, DateTime sStartDate, DateTime sEndDate)
+        {
+            MongoDB.Driver.FilterDefinition<FerroFTS.Data.last_location> oFilter;
+            FerroData.Mongo.DataMongo<FerroFTS.Data.last_location> oData = new FerroData.Mongo.DataMongo<FerroFTS.Data.last_location>();
+            MongoDB.Driver.FindOptions<FerroFTS.Data.last_location> oOptions = new MongoDB.Driver.FindOptions<FerroFTS.Data.last_location>();
+            List<FerroFTS.Data.last_location> oList;
+
+            try
+            {
+                oFilter = new MongoDB.Bson.BsonDocument("ou", sOu);
+                //Vamos a buscar bien por indicativo bien por vehículo
+                if (!string.IsNullOrEmpty(sidVehicle))
+                {
+                    oFilter = (oFilter & new MongoDB.Bson.BsonDocument("indicative", sidVehicle));
+                }
+                if (!string.IsNullOrEmpty(svehicle))
+                {
+                    oFilter = (oFilter & new MongoDB.Bson.BsonDocument("vehicle", svehicle));
+                }
+
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$gte", sStartDate)));
+                oFilter = (oFilter & new MongoDB.Bson.BsonDocument("utc_datetime", new MongoDB.Bson.BsonDocument("$lte", sEndDate)));
+                oData.Session = this._Session;
+                oList = oData.Find(oFilter, oOptions);
+                return oList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception((ex.StackTrace.Substring((ex.StackTrace.LastIndexOf("\r\n") + 4)) + ("\r\n" + ex.Message)));
+            }
+        }
+
         #endregion
-        #region IDisposable Support
+
+        #region "IDisposable Support"
+
         private bool disposedValue = false; // Para detectar llamadas redundantes
 
         protected virtual void Dispose(bool disposing)

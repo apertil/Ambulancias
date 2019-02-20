@@ -8,7 +8,7 @@ namespace FerroFTS.Data
     {
         public last_location() { }
 
-        public last_location(FerroFTS.Data.location oLocation)
+        public last_location(FerroFTS.Data.location oLocation)  
         {
             try
             {

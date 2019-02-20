@@ -23,14 +23,13 @@
         </member>
         <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_last_servicesNoJWT(System.String,System.String,System.DateTime)">
             <summary>
-            Returns a Service JSON collection.
+            Devolverá el último servicio activo, si no tiene fecha de finalización. 
              No JWT authorization
             </summary>
             <param name="ou">Localización. Formato de cadena</param>
             <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
             <param name="start_date">Local start date in ISO 8601 format (ex: 2019-01-16T10:15:00)</param>
-            <returns></returns>
-            <returns>A Location JSON collection</returns>
+            <returns>Devolverá el último servicio activo, si no tiene fecha de finalización. </returns>
             <response code="200">Locations found</response>
             <response code="204">No results found</response>
             <response code="400">Bad request</response>
@@ -39,55 +38,66 @@
         </member>
         <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_last_locations(System.String,System.String,System.DateTime)">
             <summary>
-            Devuelve en formato JSON los datos de las últimas localizaciones de los vehículos.
+            Devuelve Todos los servicios de urgencias en una fecha dada
             </summary>
             <param name="ou">Localización. Formato de cadena</param>
             <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
             <param name="ou_start_date">Local start date in ISO 8601 format (ex: 2019-01-16T10:15:00)</param>
             <returns></returns>
-            /// <returns> Devuelve en formato JSON los datos de las últimas localizaciones de los vehículos.</returns>
+            <returns> Devuelve en formato JSON los datos de las últimas localizaciones de los vehículos.</returns>
             <response code="200">Locations found</response>
             <response code="204">No results found</response>
             <response code="400">Bad request</response>
             <response code="500">Server error</response>
             <response code="503">Service unavailable</response>
         </member>
-        <member name="T:AmbulanciasLaRiojaPruebas.Controllers.ValuesController">
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_locations_dates(System.String,System.String,System.String,System.DateTime,System.DateTime)">
             <summary>
-            
+            Devuelve en formato JSON los datos de las últimas localizaciones de un vehículo en concreto
             </summary>
+            <param name="ou">Localización. Formato de cadena</param>
+            <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
+            <param name="vehicle">Vehículo. Formato de cadena</param>
+            <param name="ou_start_date">Tiempo inicial de la busqueda Formato fecha</param>
+            <param name="ou_end_date">Tiempo final de la busqueda. Formato fecha</param>
+            <returns>Devuelve en formato JSON los datos de las últimas localizaciones de un vehículo en concreto.</returns>
+            <response code="200">Locations found</response>
+            <response code="204">No results found</response>
+            <response code="400">Bad request</response>
+            <response code="500">Server error</response>
+            <response code="503">Service unavailable</response>
         </member>
-        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Get">
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_vehicle_route(System.String,System.String,System.String,System.DateTime,System.DateTime)">
             <summary>
-            
+            Devuelve en formato JSON Esta opción devuelve todos los servicios que realiza un vehículo, un indicativo de vehículo o ambos, es decir .
             </summary>
-            <returns></returns>
+            <param name="ou">Localización. Formato de cadena</param>
+            <param name="idVehicle">Identificador del vehículo. Formato de cadena</param>
+            <param name="vehicle">Tipo de Vehiculo</param>
+            <param name="ou_start_date">Tiempo inicial de la busqueda Formato fecha</param>
+            <param name="ou_end_date">Tiempo final de la busqueda. Formato fecha</param>
+            <returns>Devuelve en formato JSON la ruta de un vehículo, por nombre del vehiculo o por identificacion.</returns>
+            <response code="200">Locations found</response>
+            <response code="204">No results found</response>
+            <response code="400">Bad request</response>
+            <response code="500">Server error</response>
+            <response code="503">Service unavailable</response>
         </member>
-        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Get(System.Int32)">
+        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.SenecaController.get_vehicle_services(System.String,System.String,System.String,System.DateTime,System.DateTime)">
             <summary>
-            
+            Vehiculos que cumplen un servicio en fechas determinadas.
             </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Post(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Put(System.Int32,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-        </member>
-        <member name="M:AmbulanciasLaRiojaPruebas.Controllers.ValuesController.Delete(System.Int32)">
-            <summary>
-            
-            </summary>
-            <param name="id"></param>
+            <param name="ou">Localización. Formato de cadena</param>
+            <param name="ou_service">Tipo de Servicio. Formato de cadena</param>
+            <param name="vehicle">Tipo de Vehiculo</param>
+            <param name="ou_start_date">Tiempo inicial de la busqueda. Formato fecha</param>
+            <param name="ou_end_date">Tiempo final de la busqueda. Formato fecha</param>
+            <returns>Vehiculos que cumplen un servicio en fechas determinadas.</returns>
+            <response code="200">Locations found</response>
+            <response code="204">No results found</response>
+            <response code="400">Bad request</response>
+            <response code="500">Server error</response>
+            <response code="503">Service unavailable</response>
         </member>
         <member name="T:AmbulanciasLaRiojaPruebas.Program">
             <summary>
